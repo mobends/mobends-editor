@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mobends-editor",
+  "name": "Mo' Bends Editor",
+  "description": "A Mo' Bends addon that adds an animation editor.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["GoblinBob"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
