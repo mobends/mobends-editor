@@ -18,7 +18,7 @@ version = "${project.version}"
 group = project.group // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = project.archive
 
-def mobends_version = "1.0.0"
+def mobends_version = "1.0.0b3"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
@@ -41,7 +41,7 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-//            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            // property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -64,7 +64,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                'mobends-editor' {
+                "${project.modid}" {
                     source sourceSets.main
                 }
             }
@@ -79,10 +79,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'mobends-editor', '--all', '--output', file('src/generated/resources/')
+            args '--mod', project.modid, '--all', '--output', file('src/generated/resources/')
 
             mods {
-                'mobends-editor' {
+                "${project.modid}" {
                     source sourceSets.main
                 }
             }
@@ -98,7 +98,7 @@ dependencies {
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
-    // compile "some.group:artifact:version"
+    compile "goblinbob:mobends:1.0.0b3:deobf"
 
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
@@ -113,8 +113,6 @@ dependencies {
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-    compile fg.deobf("goblinbob.mobends:mobends:${mobends_version}")
 }
 
 jar {
