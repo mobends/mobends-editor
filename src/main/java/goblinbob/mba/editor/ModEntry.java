@@ -1,5 +1,6 @@
 package goblinbob.mba.editor;
 
+import goblinbob.mobends.forge.addon.AddonHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -19,12 +20,7 @@ public class ModEntry
     public void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("PRE-INIT PHASE");
-    }
 
-//    @EventHandler
-//    public void init(FMLInitializationEvent event)
-//    {
-//        // Registering the addon.
-//        AddonHelper.registerAddon(MODID, new AddonEntry());
-//    }
+        AddonHelper.registerAddon(MODID, new AddonEntry());
+    }
 }

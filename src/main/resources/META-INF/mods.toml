@@ -40,13 +40,20 @@ It makes players seem alive, and adds epic sword animations!
 [[dependencies.mobends-editor]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.3]"
+    versionRange="[1.16.1,)"
     ordering="NONE"
+    side="BOTH"
+
+[[dependencies.mobends]]
+    modId="bendslib"
+    mandatory=true
+    versionRange="[1.16.1,)"
+    ordering="AFTER"
     side="BOTH"
 
 [[dependencies.mobends]]
     modId="mobends"
     mandatory=true
-    versionRange="[1.16.3]"
+    versionRange="[1.16.1,)"
     ordering="AFTER"
     side="BOTH"
